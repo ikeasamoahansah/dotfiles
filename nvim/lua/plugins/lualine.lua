@@ -6,7 +6,7 @@ return {
 	  config = function()
 		    require("lualine").setup({
 			      options = {
-				        theme = "gruvbox",
+				        theme = "eldritch",
 			      },
 		    })
 	  end,
