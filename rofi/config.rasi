@@ -1,0 +1,19 @@
+configuration {
+	modes: "window,drun,run,filebrowser";
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "gruvbox-dark"
+
+entry, element-text {
+  text-color: #fac423;
+  background-color: #353535;
+}
