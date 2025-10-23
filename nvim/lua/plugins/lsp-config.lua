@@ -18,9 +18,8 @@ return {
         lazy = false,
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({
+            vim.lsp.enable('lua_ls')
+            vim.lsp.config('lua_ls', {
                 on_init = function(client)
                     if client.workspace_folders then
                         local path = client.workspace_folders[1].name
@@ -53,14 +52,20 @@ return {
                     Lua = {}
                 }
             })
-            lspconfig.jdtls.setup({
-                capabilities = capabilities,
+            -- jdtls
+            vim.lsp.enable('jdlts')
+            vim.lsp.config('jdlts', {
+                capabilities = capabilities
             })
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities,
+            -- ts_ls
+            vim.lsp.enable('ts_ls')
+            vim.lsp.config('ts_ls', {
+                capabilities = capabilities
             })
-            lspconfig.pyright.setup({
-                capabilities = capabilities,
+            -- pyright
+            vim.lsp.enable('pyright')
+            vim.lsp.config('pyright', {
+                capabilities = capabilities
             })
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
